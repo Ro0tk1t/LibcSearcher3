@@ -1,0 +1,3 @@
+include Makefile
+include README.md
+include LibcSearcher3/db/libc.tar.bz2

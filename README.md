@@ -17,6 +17,10 @@
 $ git clone https://github.com/Ro0tk1t/LibcSearcher3.git
 $ pip3 install -e LibcSearcher3
 ```
+or  
+```bash
+$ pip3 install LibcSearcher3
+```
 
 ## 初始化
 
@@ -43,6 +47,16 @@ obj.dump("__libc_start_main_ret")
 
 ```bash
 $ libcsearch --help
+usage: libcsearch [-h] [-i] [-f FUNC] [-d ADDR] [-t TO_LEAK]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -i, --init            初始化libc库
+  -f FUNC, --func FUNC  已泄露的函数名
+  -d ADDR, --addr ADDR  已泄露函数的实际地址
+  -t TO_LEAK, --to_leak TO_LEAK
+                        需要泄露的函数偏移
+
 $ libcsearch -f fgets -d 0X7ff39014bd90 -t system
 Multi Results:
  0: kali-glibc (id libc6-x32_2.31-3_amd64)

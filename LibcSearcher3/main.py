@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # coding=utf-8
 
-from cmd import Command
-from utils import extract_libc
+from LibcSearcher3.cmd import Command
+from LibcSearcher3.utils import extract_libc
 
 import os
 import re
@@ -112,6 +112,9 @@ def main():
     parser = Command()
     if parser.init:
         extract_libc()
+    if all([parser.func, parser.addr, parser.to_leak]):
+        obj = LibcSearcher(parser.func, hex(int(parser.addr, 16)))
+        print(f"[+] {parser.to_leak} offset: ", hex(obj.dump(parser.to_leak)))
 
 
 if __name__ == "__main__":

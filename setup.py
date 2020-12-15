@@ -16,7 +16,7 @@ setup(
     include_package_data=True,
     entry_points={
         'console_scripts':[
-            'libcsearch = LibcSearcher3:main',
+            'libcsearch = LibcSearcher3.main:main',
         ]
     },
 

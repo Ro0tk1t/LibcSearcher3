@@ -11,6 +11,8 @@ def Command():
     parser.add_argument('-d', '--addr', dest='addr', help='已泄露函数的实际地址')
     parser.add_argument('-t', '--to_leak', dest='to_leak', help='需要泄露的函数偏移')
 
-    commands = parser.parse_args()
-    return commands
+    cmd = parser.parse_args()
+    if not cmd.init or (cmd.func and cmd.addr and cmd.to_leak):
+        parser.print_usage()
+    return cmd
 

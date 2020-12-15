@@ -12,7 +12,7 @@ def Command():
     parser.add_argument('-t', '--to_leak', dest='to_leak', help='需要泄露的函数偏移')
 
     cmd = parser.parse_args()
-    if not cmd.init or (cmd.func and cmd.addr and cmd.to_leak):
+    if not cmd.init and not (cmd.func and cmd.addr and cmd.to_leak):
         parser.print_usage()
     return cmd
 

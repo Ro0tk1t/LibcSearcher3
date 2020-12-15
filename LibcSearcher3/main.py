@@ -14,7 +14,7 @@ class LibcSearcher(object):
         if func is not None and address is not None:
             self.add_condition(func, address)
         self.libc_database_path = os.path.join(
-            os.path.realpath(os.path.dirname(__file__)), "libc-database/db/")
+            os.path.realpath(os.path.dirname(__file__)), "db/")
         self.db = ""
 
     def add_condition(self, func, address):
@@ -81,6 +81,8 @@ class LibcSearcher(object):
 
         if not self.db:
             self.decided()
+        if not self.db:
+            return 0
         db = self.libc_database_path + self.db
         with open(db, 'rb') as fd:
             data = fd.read().decode(errors='ignore').strip("\n").split("\n")
@@ -113,7 +115,7 @@ def main():
     if parser.init:
         extract_libc()
     if all([parser.func, parser.addr, parser.to_leak]):
-        obj = LibcSearcher(parser.func, hex(int(parser.addr, 16)))
+        obj = LibcSearcher(parser.func, int(parser.addr, 16))
         print(f"[+] {parser.to_leak} offset: ", hex(obj.dump(parser.to_leak)))
 
 

@@ -20,6 +20,9 @@ def extract_libc():
 
 
 def parse_libc(path_):
+    if not path.exists(path_):
+        print('[-] libc file not exists: ', path_)
+        return
     cmd = ['scripts/add', path_]
     proc = subprocess.Popen(cmd)
     try:

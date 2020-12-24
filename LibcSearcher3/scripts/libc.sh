@@ -40,8 +40,6 @@ process_libc() {
   local id=$2
   local info=$3
   local url=$4
-  echo "  -> Writing libc ${libc} to ../db/${id}.so"
-  cp $libc ../db/${id}.so
   echo "  -> Writing symbols to ../db/${id}.symbols"
   (dump_symbols $libc; dump_libc_start_main_ret $libc; dump_bin_sh $libc) \
      > ../db/${id}.symbols

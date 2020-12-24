@@ -1,3 +1,5 @@
 include Makefile
 include README.md
 include LibcSearcher3/db/libc.tar.bz2
+include LibcSearcher3/script/libc.sh
+include LibcSearcher3/script/add

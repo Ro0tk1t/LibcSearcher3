@@ -2,7 +2,7 @@
 # coding=utf-8
 
 from LibcSearcher3.cmd import Command
-from LibcSearcher3.utils import extract_libc
+from LibcSearcher3.utils import extract_libc, parse_libc
 
 import os
 import re
@@ -114,6 +114,8 @@ def main():
     parser = Command()
     if parser.init:
         extract_libc()
+    if parser.local_libc:
+        parse_libc(parser.local_libc)
     if all([parser.func, parser.addr, parser.to_leak]):
         obj = LibcSearcher(parser.func, int(parser.addr, 16))
         print(f"[+] {parser.to_leak} offset: ", hex(obj.dump(parser.to_leak)))

@@ -17,3 +17,12 @@ def extract_libc():
         proc.communicate()
     except Exception as e:
         print(e)
+
+
+def parse_libc(path_):
+    cmd = ['scripts/add', path_]
+    proc = subprocess.Popen(cmd)
+    try:
+        proc.communicate()
+    except Exception as e:
+        print(e)

@@ -1,3 +1,8 @@
+[![PKGS](https://github.com/Ro0tk1t/LibcSearcher3/workflows/Upload%20Python%20Package/badge.svg)](https://github.com/Ro0tk1t/LibcSearcher3/actions)
+[![PyPI package](https://badge.fury.io/py/LibcSearcher3.svg)](https://pypi.org/project/LibcSearcher3/)
+[![Python](https://img.shields.io/badge/python-%3E%3D3.7-blue)](https://www.python.org/downloads/)
+[![Wheel](https://img.shields.io/pypi/wheel/LibcSearcher3)](https://www.python.org/downloads/)
+[![License](https://img.shields.io/github/license/Ro0tk1t/LibcSearcher3)](https://github.com/Ro0tk1t/LibcSearcher3/blob/main/LICENSE)
 # LibcSearcher3
 
 (Search libc function offset)
@@ -70,6 +75,14 @@ You can choose it by hand
 Or type 'exit' to quit: 0
 [+] kali-glibc (id libc6-x32_2.31-3_amd64) be choosed.
 [+] system offset:  0x40130
+```
+
+## 添加本地libc库信息
+```bash
+$ libcsearch -l /usr/lib32/libc-2.31.so
+Adding local libc /usr/lib32/libc-2.31.so (id local-189747720230b84e629b7fb77ecb4006416e3ada  /usr/lib32/libc-2.31.so)
+  -> Writing symbols to ../db/local-189747720230b84e629b7fb77ecb4006416e3ada.symbols
+  -> Writing version info
 ```
 
 如果遇到返回多个libc版本库的情况，可以通过`add_condition(leaked_func, leaked_address)`来添加限制条件，也可以手工选择其中一个libc版本（如果你确定的话）。

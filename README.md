@@ -18,7 +18,7 @@
 
 ## 安装
 
-```shell
+```bash
 $ git clone https://github.com/Ro0tk1t/LibcSearcher3.git
 $ pip3 install -e LibcSearcher3
 ```

@@ -90,7 +90,6 @@ requirements_general() {
 }
 
 # ===== Debian-like ===== #
-
 get_debian() {
   local url="$1"
   local info="$2"
@@ -133,7 +132,6 @@ requirements_debian() {
 }
 
 # ===== RPM ===== #
-
 get_rpm() {
   local url="$1"
   local info="$2"
@@ -190,7 +188,6 @@ requirements_rpm() {
 }
 
 # ===== CentOS ===== #
-
 get_from_filelistgz() {
   local info=$1
   local website=$2
@@ -225,7 +222,6 @@ requirements_centos() {
 
 
 # ===== Arch ===== #
-
 get_pkg() {
   local url="$1"
   local info="$2"
@@ -294,7 +290,6 @@ requirements_pkg() {
 
 
 # ===== Alpine ===== #
-
 get_apk() {
   local url="$1"
   local info="$2"229
@@ -354,7 +349,6 @@ requirements_apk() {
 
 
 # ===== Local ===== #
-
 add_local() {
   local libc=$1
   [[ -f $libc ]] || return

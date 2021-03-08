@@ -57,6 +57,8 @@ usage: libcsearch [-h] [-i] [-f FUNC] [-d ADDR] [-t TO_LEAK]
 optional arguments:
   -h, --help            show this help message and exit
   -i, --init            初始化libc库
+  -l LOCAL_LIBC, --local LOCAL_LIBC
+                        添加本地libc信息
   -f FUNC, --func FUNC  已泄露的函数名
   -d ADDR, --addr ADDR  已泄露函数的实际地址
   -t TO_LEAK, --to_leak TO_LEAK

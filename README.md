@@ -68,7 +68,7 @@ optional arguments:
   -t TO_LEAK, --to_leak TO_LEAK
                         需要泄露的函数偏移
 
-$ libcsearch -f fgets -d 0X7ff39014bd90 -t system
+$ libcsearch -f fgets -d 0x7ff39014bd90 -t system
 Multi Results:
  0: kali-glibc (id libc6-x32_2.31-3_amd64)
  1: ubuntu-old-eglibc (id libc6-amd64_2.13-0ubuntu13.2_i386)

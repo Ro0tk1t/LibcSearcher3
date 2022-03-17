@@ -23,7 +23,10 @@ def parse_libc(path_):
     if not path.exists(path_):
         print('[-] libc file not exists: ', path_)
         return
-    cmd = ['scripts/add', path_]
+    base_path = path.dirname(path.abspath(__file__))
+    script = path.join(base_path, 'scripts')
+    script = path.join(script, 'add')
+    cmd = [script, path_]
     proc = subprocess.Popen(cmd)
     try:
         proc.communicate()

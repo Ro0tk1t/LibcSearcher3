@@ -3,4 +3,4 @@
 
 from LibcSearcher3.main import LibcSearcher
 
-VERSION = 'v1.3.0'
+VERSION = 'v1.4.0'

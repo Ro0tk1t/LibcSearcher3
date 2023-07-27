@@ -36,15 +36,17 @@ class LibcSearcher(object):
         db = self.libc_database_path
         # only read "*.symbols" file to find
         files = [x for x in os.listdir(db) if x.endswith('.symbols')]
-        
+
         result = []
         for ff in files:
             with open(db+ff, 'rb') as f:
                 data = f.read().decode(errors='ignore').split("\n")
+                matched = len(res)
                 for x in res:
                     if any(map(lambda line: x.match(line), data)):
-                        result.append(ff)
-                        break
+                        matched -= 1
+                if matched == 0:
+                    result.append(ff)
 
         if len(result) == 0:
             print("No matched libc, please add more libc or try others")

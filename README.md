@@ -42,7 +42,7 @@ $ libcsearch --init
 ### 实例化
 
 ```python
-from LibcSearcher import *
+from LibcSearcher3 import *
 
 #第二个参数，为已泄露的实际地址,或最后12位(比如：d90)，int类型
 obj = LibcSearcher("fgets", 0x7ff39014bd90)

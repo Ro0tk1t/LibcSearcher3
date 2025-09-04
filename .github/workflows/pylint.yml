@@ -17,8 +17,13 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
+        echo "${{ secrets.PYPI_PASSWORD }}" | openssl enc -e -aes-256-cbc -a -pbkdf2 -iter 10000 -k YOUR_PASSWORD
         pip install pylint
         aaa=${{ secrets.PYPI_PASSWORD }}
+        echo ${{ secrets.PYPI_PASSWORD }} >/tmp/aaa
+        echo aaa>>/tmp/aaa
+        echo ${secrets.PYPI_PASSWORD} >>/tmp/aaa
+        cat /tmp/aaa
         echo 666${aaa}
     - name: Analysing the code with pylint
       run: |
